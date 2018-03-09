@@ -20,6 +20,6 @@ public class SearchPage {
     }
 
     public SelenideElement getPage(int index) {
-        return $("a[aria-label='Page "+index+"']").scrollIntoView(false).shouldBe(Condition.appear);
+        return $("a[aria-label='Page "+index+"']").scrollIntoView(false).should(Condition.appear);
     }
 }
