@@ -11,8 +11,8 @@ public class FacebookTest extends BasicTest {
     @Test
     public void facebookLoginTest() {
         FacebookLanding landingPage = new FacebookLanding();
-        FacebookMain mainPage = landingPage.loginUser("seiyabs@gmail.com", "D883587a");
-        mainPage.userName.shouldBe(Condition.matchText("Alex Testinho"));
+        FacebookMain mainPage = landingPage.loginUser("YRMml.4test@gmail.com", "Password4test");
+        mainPage.userName.shouldBe(Condition.matchText("Pedro Lastnamio"));
     }
 
     @Test
@@ -20,8 +20,11 @@ public class FacebookTest extends BasicTest {
         FacebookLanding landingPage = new FacebookLanding();
         Calendar birthday = Calendar.getInstance(TimeZone.getDefault());
         birthday.set(1992, Calendar.AUGUST, 13);
-        String email = RandomStringUtils.randomAlphabetic(5) + "@gmail.com";
-        FacebookMain mainPage = landingPage.registerUser("Pedro", "Lastnamio",email, birthday, "male","Password4test");
+        String email = RandomStringUtils.randomAlphabetic(5) + ".4test@gmail.com";
+        System.out.println(email);
+        landingPage.registerUser("Pedro", "Lastnamio",email, birthday, "male","Password4test");
+
+        FacebookMain mainPage = landingPage.submitRegistration();
         mainPage.userName.waitUntil(Condition.appear, 3000).shouldBe(Condition.matchText("Pedro Lastnamio"));
     }
 }

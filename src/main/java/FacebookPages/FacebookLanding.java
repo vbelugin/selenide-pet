@@ -18,7 +18,12 @@ public class FacebookLanding {
         return page(FacebookMain.class);
     }
 
-    public FacebookMain registerUser(
+    public FacebookMain submitRegistration() {
+        $(By.name("websubmit")).click();
+        return page(FacebookMain.class);
+    }
+
+    public void registerUser(
             String name,
             String lastName,
             String email,
@@ -34,22 +39,18 @@ public class FacebookLanding {
 
         //Setup birthday
         $("#day").click();
-        $("option[value='"+ birthday.get(Calendar.DAY_OF_MONTH) +"']").click();
+        $("#day > option[value='"+ birthday.get(Calendar.DAY_OF_MONTH) +"']").click();
 
         $("#month").click();
-        $("option[value='"+ birthday.get(Calendar.MONTH) +"']").click();
+        $("#month > option[value='"+ birthday.get(Calendar.MONTH) +"']").click();
 
         $("#year").click();
-        $("option[value='"+ birthday.get(Calendar.YEAR) +"']").click();
+        $("#year > option[value='"+ birthday.get(Calendar.YEAR) +"']").click();
 
         //Select sex
         switch (sex) {
             case "female": $("[name='sex'][value='1']").click(); break;
             case "male": $("[name='sex'][value='2']").click(); break;
         }
-
-        $(By.name("websubmit")).click();
-
-        return page(FacebookMain.class);
     }
 }
