@@ -9,12 +9,13 @@ import java.io.File;
 import static org.testcontainers.containers.BrowserWebDriverContainer.VncRecordingMode.RECORD_ALL;
 
 
-public class BasicTest {
+public class BaseTest {
     @ClassRule
     public static BrowserWebDriverContainer chrome =
             new BrowserWebDriverContainer()
-                    .withDesiredCapabilities(DesiredCapabilities.firefox())
+                    .withDesiredCapabilities(DesiredCapabilities.chrome())
                     .withRecordingMode(RECORD_ALL, new File("./build/"));
+
     @BeforeClass
     public static void setUp() {
         WebDriverRunner.setWebDriver(chrome.getWebDriver());

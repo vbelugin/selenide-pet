@@ -6,7 +6,7 @@ import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.matchesText;
 import static com.codeborne.selenide.Condition.text;
 
-public class GoogleSearchTest extends BasicTest {
+public class GoogleSearchTest extends BaseTest {
     @Test
     public void basicGoogleTest() {
         GooglePage page = new GooglePage();

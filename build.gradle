@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.2.10'
+    ext.kotlin_version = '1.2.30'
     ext.selenide_version = '4.10.01'
 
     repositories {
@@ -31,7 +31,6 @@ dependencies {
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
     compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
     compile group: 'org.testcontainers', name: 'selenium', version: '1.1.5'
-    compile group: 'org.testcontainers', name: 'postgresql', version: '1.1.5'
 }
 
 compileKotlin {

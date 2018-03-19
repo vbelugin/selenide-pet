@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-public class FacebookTest extends BasicTest {
+public class FacebookTest extends BaseTest {
     @Test
     public void facebookLoginTest() {
         FacebookLanding landingPage = new FacebookLanding();
