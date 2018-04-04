@@ -11,8 +11,8 @@ buildscript {
     }
 }
 
-group 'selenide-pet'
-version '1.0-SNAPSHOT'
+group = 'selenide-pet'
+version = '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'kotlin'
@@ -47,4 +47,17 @@ test {
         events "passed", "skipped", "failed"
     }
     systemProperties System.properties
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['src/test', 'src/testSuites']
+        }
+    }
 }

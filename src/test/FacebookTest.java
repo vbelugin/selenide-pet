@@ -1,9 +1,9 @@
-import FacebookPages.FacebookLanding;
-import FacebookPages.FacebookMain;
+import FacebookPages.*;
 import com.codeborne.selenide.Condition;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Test;
 
+import FacebookPages.FacebookMain;
 import java.util.Calendar;
 import java.util.TimeZone;
 
